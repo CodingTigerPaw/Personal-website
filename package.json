@@ -38,6 +38,7 @@
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
+		"path": "^0.12.7",
 		"svelte-device-info": "^1.0.6"
 	}
 }
