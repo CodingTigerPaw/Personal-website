@@ -40,6 +40,7 @@
 	},
 	"dependencies": {
 		"path": "^0.12.7",
-		"svelte-device-info": "^1.0.6"
+		"svelte-device-info": "^1.0.6",
+		"tailwind-merge": "^2.5.4"
 	}
 }
