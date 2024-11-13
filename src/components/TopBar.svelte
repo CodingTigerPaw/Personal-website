@@ -12,7 +12,7 @@
 	import Contact from './Contact.svelte';
 	import { pushState } from '$app/navigation';
 
-	let hamburgerMenu = $state(false);
+	let hamburgerMenu = $state(true);
 	let showPopup = $state(false);
 
 	const setHamburgerMenu = () => {
@@ -47,20 +47,20 @@
 				text={$translate(Menu.technologies)}
 			/>
 		</li>
-		<li>
-			<Link
+		<!-- <li> -->
+		<!-- <Link
 				isActive={$page.url.pathname === '/curiculum'}
 				dest="/curiculum"
 				text={$translate(Menu.cv)}
-			/>
-		</li>
-		<li>
+			/> -->
+		<!-- </li> -->
+		<!-- <li>
 			<Link
 				isActive={$page.url.pathname === '/projects'}
 				dest="/projects"
 				text={$translate(Menu.projects)}
 			/>
-		</li>
+		</li> -->
 		<li>
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -101,7 +101,10 @@
 			setHamburgerMenu();
 		}}
 	>
-		<Icon src={HamburgerIcon} customClass="fixed w-[30px] right-2 hover:invert" />
+		<div class="bg-orange-400">
+			<Icon src={HamburgerIcon} customClass="fixed w-[30px] right-2 hover:invert" />
+		</div>
+
 		<div
 			class={twMerge(
 				` w-[150px] fixed mt-4 top-12 bg-white border border-black text-black transition-all`,
@@ -109,6 +112,11 @@
 			)}
 		>
 			<ul class="ml-4 my-2">
+				<li>
+					<Link isHamburger dest="/" isActive={$page.url.pathname === '/'}>
+						<div class="p-1">{$translate(Menu.homepage)}</div>
+					</Link>
+				</li>
 				<li>
 					<Link isHamburger dest="/about" isActive={$page.url.pathname === '/about'}>
 						<div class="p-1">{$translate(Menu.about)}</div>
@@ -119,16 +127,16 @@
 						<div class="p-1">{$translate(Menu.technologies)}</div>
 					</Link>
 				</li>
-				<li>
+				<!-- <li>
 					<Link isHamburger dest="/curiculum" isActive={$page.url.pathname === '/curiculum'}>
 						<div class="p-1">{$translate(Menu.cv)}</div>
 					</Link>
-				</li>
-				<li>
+				</li> -->
+				<!-- <li>
 					<Link isHamburger dest="/projects" isActive={$page.url.pathname === '/projects'}>
 						<div class="p-1">{$translate(Menu.projects)}</div>
 					</Link>
-				</li>
+				</li> -->
 				<li>
 					<span
 						class={'p-1'}
