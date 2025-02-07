@@ -18,6 +18,10 @@ export default {
 			},
 			transitionProperty: {
 				height: 'width'
+			},
+			filter: {
+				orange:
+					'brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(-30deg)'
 			}
 		}
 	},

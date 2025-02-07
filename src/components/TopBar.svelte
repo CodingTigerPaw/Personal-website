@@ -28,7 +28,7 @@
 	};
 </script>
 
-<div data-testid="topbar" class="px-2 py-6 flex h-full bg-blue text-white top-0">
+<div data-testid="topbar" class="px-2 py-6 flex h-full gradient text-white top-0">
 	<Link dest="/" isLogo>
 		<Header textSize={size.xl} text="Marcin Kowalski" />
 	</Link>
@@ -54,13 +54,13 @@
 				text={$translate(Menu.cv)}
 			/> -->
 		<!-- </li> -->
-		<!-- <li>
+		<li>
 			<Link
 				isActive={$page.url.pathname === '/projects'}
 				dest="/projects"
 				text={$translate(Menu.projects)}
 			/>
-		</li> -->
+		</li>
 		<li>
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -102,7 +102,7 @@
 		}}
 	>
 		<div class="bg-orange-400">
-			<Icon src={HamburgerIcon} customClass="fixed w-[30px] right-2 hover:invert" />
+			<Icon src={HamburgerIcon} customClass="fixed w-[30px] right-2 invert hover:filter-orange" />
 		</div>
 
 		<div
@@ -132,11 +132,11 @@
 						<div class="p-1">{$translate(Menu.cv)}</div>
 					</Link>
 				</li> -->
-				<!-- <li>
+				<li>
 					<Link isHamburger dest="/projects" isActive={$page.url.pathname === '/projects'}>
 						<div class="p-1">{$translate(Menu.projects)}</div>
 					</Link>
-				</li> -->
+				</li>
 				<li>
 					<span
 						class={'p-1'}
@@ -169,3 +169,16 @@
 	</div>
 	<Popup bind:isVisible={showPopup} Comp={Contact} />
 </div>
+
+<style>
+	.gradient {
+		background: rgb(0, 0, 0);
+		background: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 1) 5%,
+			rgba(14, 22, 54, 1) 36%,
+			rgba(14, 22, 54, 1) 64%,
+			rgba(0, 0, 0, 1) 95%
+		);
+	}
+</style>

@@ -2,12 +2,13 @@
 	import { getContext } from 'svelte';
 	import { Contact } from '../const';
 	import Icon from './atoms/Icon.svelte';
+	import '@fontsource/poppins';
 
 	const parentInfo = getContext<string>('parent');
 </script>
 
 {#if parentInfo === 'popup'}
-	<div class="flex flex-col gap-3">
+	<div class="flex flex-col gap-3 poppins">
 		<div class="flex flex-row text-black">
 			<Icon src={Contact.github.icon} customClass="w-12" />
 			<span class="my-auto ml-2 hover:text-orange-600">
@@ -28,3 +29,9 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	.poppins {
+		font-family: 'Poppins', sans-serif;
+	}
+</style>

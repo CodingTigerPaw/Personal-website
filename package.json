@@ -39,6 +39,7 @@
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
+		"@fontsource/poppins": "^5.1.1",
 		"path": "^0.12.7",
 		"svelte-device-info": "^1.0.6",
 		"tailwind-merge": "^2.5.4"

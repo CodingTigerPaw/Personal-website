@@ -2,18 +2,33 @@
 	import { size } from '../const';
 	import Header from './atoms/Header.svelte';
 	import Card from './Card/Card.svelte';
-	import reactIcon from '../lib/icons/react.png';
-	import tailwind from '../lib/icons/tailwind.png';
-
-	import test from '../lib/images/test.jpg';
+	import { ProjectsPage } from '../const';
 </script>
 
-<div class=" h-full sm:h-screen bg-blue text-white">
-	<Header text="technologies" centered capitalized textSize={size.xl} />
+<div class=" h-full sm:h-screen gradient text-white">
+	<Header text="Projekty" centered capitalized textSize={size.xl} />
 	<div class="flex flex-col sm:flex-row justify-center">
-		<Card icon={reactIcon} text={{ eng: 'react', pl: 'react PL' }} header={'react!'} image={test} />
-		<Card icon={tailwind} text={'tailwind'} header={'taiwind'} />
-		<Card icon={reactIcon} text={'react'} header={'react!'} />
-		<Card icon={tailwind} text={'tailwind'} header={'taiwind'} />
+		{#each ProjectsPage as Project}
+			<Card
+				icon={Project.icon}
+				text={Project.text}
+				header={Project.header}
+				link={Project.link}
+				hideButton
+			/>
+		{/each}
 	</div>
 </div>
+
+<style>
+	.gradient {
+		background: rgb(0, 0, 0);
+		background: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 1) 5%,
+			rgba(14, 22, 54, 1) 36%,
+			rgba(14, 22, 54, 1) 64%,
+			rgba(0, 0, 0, 1) 95%
+		);
+	}
+</style>

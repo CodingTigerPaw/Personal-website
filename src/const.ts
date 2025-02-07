@@ -14,6 +14,7 @@ export type translation = {
 type LandingPage = {
 	header: string;
 	description: translation;
+	descriptionSecond: translation;
 	buttonText: translation;
 	beanReliability: translation;
 	beanPassion: translation;
@@ -72,6 +73,11 @@ export const LandingPage: LandingPage = {
 		eng: 'As a passionate programmer, I combine creativity with technology to create modern and engaging applications. My approach to coding is not just about writing code, but about crafting solutions that inspire and work flawlessly',
 		pl: 'Jako programista z pasją, łączę kreatywność z technologią, aby tworzyć nowoczesne i angażujące aplikacje. Moje podejście do kodowania to nie tylko pisanie kodu, ale tworzenie rozwiązań, które inspirują i działają bez zarzutu'
 	},
+
+	descriptionSecond: {
+		eng: 'My programming philosophy is based on continuous improvement and learning. I am always looking for new ways to make code more efficient and projects more satisfying for users. I believe that technology has the power to change the world for the better—and every day, I strive to contribute to that change, one line of code at a time',
+		pl: 'Moja filozofia programowania opiera się na ciągłym doskonaleniu i nauce. Zawsze poszukuję nowych sposobów, aby kod był bardziej optymalny, a projekty bardziej satysfakcjonujące dla użytkowników. Wierzę, że technologia ma moc zmieniania świata na lepsze – i codziennie staram się przyczynić się do tej zmiany, jedna linia kodu na raz.'
+	},
 	buttonText: {
 		eng: 'Read More',
 		pl: 'Dowiedz się więcej'
@@ -87,6 +93,51 @@ export const LandingPage: LandingPage = {
 };
 
 // export const CVPage: CVPage = {};
+
+export const ProjectsPage = [
+	{
+		icon: iconsConst.react,
+		header: {
+			eng: 'LinkDrawer',
+			pl: 'LinkDrawer'
+		},
+		text: {
+			eng: 'A web application for storing and managing interesting links in the form of a draggable list using the DnD-kit library',
+			pl: 'web aplikacja do przechowywania i interesujących linków pod postacią przeciągalnej listy z użyciem biblioteki DnD-kit'
+		},
+		link: 'https://link-drawer.vercel.app/'
+	},
+	{
+		icon: iconsConst.react,
+		header: {
+			eng: 'ACME Blog',
+			pl: 'ACME Blog'
+		},
+		text: {
+			eng: 'A stylish blog with the ability to save posts to favorites and filter by categories',
+			pl: 'stylowy blog z zapisywaniem postów do ulubionych oraz filtorwaniem po kategoriach '
+		},
+		link: 'https://acme-blog-qqsb.vercel.app/'
+	},
+	{
+		icon: iconsConst.svelte,
+		header: {
+			eng: 'Personal Website',
+			pl: 'Strona Osobista'
+		},
+		text: {
+			eng: 'The currently viewed page :) utilizes the capabilities of the modern and fresh SvelteKit framework',
+			pl: 'Aktualnie przeglądana strona :) wykorzystująca możliwości  nowoczesnego i świeego frameworka SvelteKit'
+		},
+		link: ''
+	}
+];
+export const TechPageHeader = {
+	header: {
+		pl: 'Technologie',
+		eng: 'Technologies'
+	}
+};
 
 export const Tech: TechPage[] = [
 	{
@@ -134,6 +185,32 @@ export const Tech: TechPage[] = [
 		header: {
 			pl: 'TypeScript',
 			eng: 'TypeScript'
+		}
+	},
+	{
+		icon: iconsConst.node,
+		text: {
+			eng: 'Node.js is a revolutionary environment that allows JavaScript to run on the server side, opening up completely new possibilities for developers. Powered by the V8 engine, which also drives Google Chrome, Node.js operates blazingly fast and efficiently, handling thousands of requests simultaneously without unnecessary delays. It’s a technology that makes web applications incredibly performant, scalable, and responsive.',
+			pl: 'Node.js to rewolucyjne środowisko, które pozwala uruchamiać JavaScript po stronie serwera, otwierając przed programistami zupełnie nowe możliwości. Dzięki silnikowi V8, który napędza również Google Chrome, Node.js działa błyskawicznie i efektywnie, przetwarzając tysiące zapytań jednocześnie bez zbędnych opóźnień. To technologia, która sprawia, że aplikacje internetowe stają się niezwykle wydajne, skalowalne i responsywne.'
+		},
+		header: {
+			pl: 'Node JS',
+			eng: 'Node JS'
+		}
+	},
+	{
+		icon: iconsConst.svelte,
+		text: {
+			eng: `Forget heavy frameworks and complex configurations! Svelte is an ultra-lightweight technology that compiles your code into pure JavaScript, eliminating unnecessary overhead and boosting application performance.
+
+With its innovative approach, Svelte doesn’t rely on a virtual DOM – changes happen instantly, making interfaces lightning-fast. Simple in syntax yet powerful in execution, it makes coding a pure pleasure. Less code, higher performance, and a better user experience`,
+			pl: `Zapomnij o ciężkich frameworkach i skomplikowanych konfiguracjach! Svelte to ultralekka technologia, która kompiluje Twój kod do czystego JavaScriptu, eliminując zbędny balast i przyspieszając działanie aplikacji.
+
+Dzięki innowacyjnemu podejściu, Svelte nie potrzebuje wirtualnego DOM – zmiany są natychmiastowe, a interfejsy działają błyskawicznie. Prosty, intuicyjny składniowo i potężny w działaniu, sprawia, że pisanie kodu to czysta przyjemność. Mniej kodu, większa wydajność, lepsze doświadczenie użytkownika – to właśnie Svelte!`
+		},
+		header: {
+			pl: 'SvelteKit',
+			eng: 'SvelteKit'
 		}
 	}
 ];
