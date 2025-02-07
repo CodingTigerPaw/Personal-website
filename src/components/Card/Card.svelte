@@ -34,7 +34,7 @@
 </script>
 
 <span tabindex="1" onclick={setModal} class=" lg:w-1/5">
-	<CardContent {text} {icon} {header} {image} {link} {customClass} {customIconClass} {hideButton} />
+	<CardContent {text} {icon} {header} {image} {customClass} {customIconClass} {hideButton} />
 	{#if link}
 		<div class="text-center hover:text-orange-500">
 			<a href={link} target="_blank">{link}</a>

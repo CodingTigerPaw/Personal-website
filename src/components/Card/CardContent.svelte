@@ -13,7 +13,6 @@
 		text?: translateObjType | string | undefined;
 		header?: translateObjType | string | undefined;
 		image?: string | undefined;
-		link?: string | undefined;
 		customClass?: string | undefined;
 		customIconClass?: string | undefined;
 		hideButton?: boolean | undefined;
@@ -25,7 +24,6 @@
 		text = undefined,
 		header = undefined,
 		image = undefined,
-		link = undefined,
 		customClass = undefined,
 		customIconClass = undefined,
 		hideButton = false
@@ -41,12 +39,15 @@
 
 <!-- add p-1 if nothing else working -->
 <div
-	class={twMerge('bg-white text-black rounded-xl m-6 p-1 sm:m-8 md:cursor-pointer', customClass)}
+	class={twMerge(
+		'bg-[#f4f4f4] text-black rounded-xl my-6 mx-10 p-1 sm:m-8 md:cursor-pointer ',
+		customClass
+	)}
 >
 	{#if icon}
 		<div
 			class={twMerge(
-				'w-[50px] sm:w-[70px] m-auto mt-[-25px] sm:mt-[-35px] relative z-20',
+				'w-[50px] sm:w-[70px] m-auto mt-[-25px] sm:mt-[-35px] relative',
 				customIconClass
 			)}
 		>

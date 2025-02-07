@@ -12,7 +12,7 @@
 	import '@fontsource/poppins';
 </script>
 
-<div class="h-full gradient poppins">
+<div class="min-h-screen h-full sm:screen gradient poppins">
 	<Box transparent={true} customClass="p-4 sm:p-16 text-white lg:w-1/2">
 		<Header text={LandingPage.header} textSize={size.xxl} />
 		<div class="bg-orange-500 h-1 w-[100px] sm:w-[200px]"></div>
