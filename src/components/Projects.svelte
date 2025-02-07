@@ -5,7 +5,7 @@
 	import { ProjectsPage } from '../const';
 </script>
 
-<div class=" h-full sm:h-screen gradient text-white">
+<div class="min-h-screen h-full sm:screen gradient text-white">
 	<Header text="Projekty" centered capitalized textSize={size.xl} />
 	<div class="flex flex-col sm:flex-row justify-center">
 		{#each ProjectsPage as Project}

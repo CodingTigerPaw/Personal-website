@@ -218,7 +218,8 @@ Dzięki innowacyjnemu podejściu, Svelte nie potrzebuje wirtualnego DOM – zmia
 export const Contact = {
 	github: {
 		icon: iconsConst.github,
-		link: 'https://github.com/CodingTigerPaw'
+		link: 'https://github.com/CodingTigerPaw',
+		text: 'Link to Github Repository'
 	},
 	email: {
 		icon: iconsConst.mail,

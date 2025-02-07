@@ -12,7 +12,7 @@
 		<div class="flex flex-row text-black">
 			<Icon src={Contact.github.icon} customClass="w-12" />
 			<span class="my-auto ml-2 hover:text-orange-600">
-				<a href="https://github.com/CodingTigerPaw" target="_blank">{Contact.github.link}</a>
+				<a href="https://github.com/CodingTigerPaw" target="_blank">{Contact.github.text}</a>
 			</span>
 		</div>
 		<div class="flex flex-row text-black">
