@@ -15,6 +15,14 @@
 	let hamburgerMenu = $state(true);
 	let showPopup = $state(false);
 
+	const setPopup = () => (showPopup = !showPopup);
+	const setState = () => pushState('', { showModal: true });
+
+	const setStatus = (setState: () => void, setPopup: () => boolean) => () => {
+		setState(), setPopup();
+	};
+
+	const setStatusCarrying = setStatus(setState, setPopup);
 	const setHamburgerMenu = () => {
 		hamburgerMenu = !hamburgerMenu;
 	};
@@ -26,26 +34,25 @@
 			lang.set('pl');
 		}
 	};
+
+	const setActive = (url: string) => $page.url.pathname === url;
 </script>
 
-<div data-testid="topbar" class="px-2 py-6 flex h-full gradient text-white top-0">
+<div
+	data-testid="topbar"
+	class={twMerge(
+		`px-2 py-6 flex h-full ${$page.url.pathname === '/' ? 'bg-black' : 'gradient'}  text-white top-0`
+	)}
+>
 	<Link dest="/" isLogo>
 		<Header textSize={size.xl} text="Marcin Kowalski" />
 	</Link>
 	<ul data-testid="list" class="ml-auto w-1/2 lg:w-1/3 lg:mr-4 justify-around hidden md:flex z-1">
 		<li>
-			<Link
-				isActive={$page.url.pathname === '/about'}
-				dest="/about"
-				text={$translate(Menu.about)}
-			/>
+			<Link isActive={setActive('/about')} dest="/about" text={$translate(Menu.about)} />
 		</li>
 		<li>
-			<Link
-				isActive={$page.url.pathname === '/tech'}
-				dest="/tech"
-				text={$translate(Menu.technologies)}
-			/>
+			<Link isActive={setActive('/tech')} dest="/tech" text={$translate(Menu.technologies)} />
 		</li>
 		<!-- <li> -->
 		<!-- <Link
@@ -55,22 +62,13 @@
 			/> -->
 		<!-- </li> -->
 		<li>
-			<Link
-				isActive={$page.url.pathname === '/projects'}
-				dest="/projects"
-				text={$translate(Menu.projects)}
-			/>
+			<Link isActive={setActive('/projects')} dest="/projects" text={$translate(Menu.projects)} />
 		</li>
 		<li>
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<span
-				class="hover:bg-orange-600 box-border hover:rounded-lg p-1"
-				onclick={() => {
-					showPopup = !showPopup;
-					console.log(showPopup);
-					pushState('', { showModal: true });
-				}}>{$translate(Menu.contact)}</span
+			<span class="hover:bg-orange-600 box-border hover:rounded-lg p-1" onclick={setStatusCarrying}
+				>{$translate(Menu.contact)}</span
 			>
 		</li>
 		<li>

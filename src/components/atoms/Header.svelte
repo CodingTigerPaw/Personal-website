@@ -1,16 +1,7 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import { size } from '../../const';
-	import type { translation } from '../../const';
-
-	interface Props {
-		text: string | translation | undefined;
-		textSize?: size | undefined;
-		centered?: boolean;
-		capitalized?: boolean;
-		customClass?: string | undefined;
-		background?: boolean | undefined;
-	}
+	import type { HeaderProps } from '../../types/headerType';
 
 	let {
 		text,
@@ -19,7 +10,7 @@
 		capitalized = false,
 		customClass = undefined,
 		background = undefined
-	}: Props = $props();
+	}: HeaderProps = $props();
 
 	let setFontSize = (fontSize: size | undefined): string => {
 		if (size !== undefined) {

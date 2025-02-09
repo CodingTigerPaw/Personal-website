@@ -25,7 +25,7 @@
 <div class={twMerge(isVisible ? 'block' : 'hidden', 'absolute h-full w-full')}>
 	<div
 		class={twMerge(
-			'bg-white relative w-5/6 md:w-[400px] md:left-1/2 md:translate-x-[-200px] top-1/4 p-4 rounded-md mx-12 md:max-w-screen border z-50',
+			'bg-[#f4f4f4] relative w-5/6 md:w-[400px] md:left-1/2 md:translate-x-[-200px] top-1/4 p-4 rounded-md mx-12 md:max-w-screen border z-50',
 			customClass
 		)}
 	>

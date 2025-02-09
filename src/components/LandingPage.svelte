@@ -60,7 +60,7 @@
 			rgba(0, 0, 0, 1) 95%
 		); */
 
-		background: rgb(29, 47, 111);
+		background: #1d2f6f;
 		background: radial-gradient(circle, rgba(29, 47, 111, 1) 0%, rgba(0, 0, 0, 1) 100%);
 	}
 	.poppins {

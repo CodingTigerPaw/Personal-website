@@ -4,13 +4,9 @@
 	const bubble = createBubbler();
 	import { twMerge } from 'tailwind-merge';
 	import { size } from '../../../../const';
-	interface Props {
-		text: string | undefined;
-		buttonSize?: size | undefined;
-		customClass?: string | undefined;
-	}
+	import type { ButtonAtomProps } from '../../../../types/buttonAtomType';
 
-	let { text, buttonSize = undefined, customClass }: Props = $props();
+	let { text, buttonSize = undefined, customClass }: ButtonAtomProps = $props();
 
 	const setSize = (buttonSize: size | undefined): string | undefined => {
 		if (buttonSize !== undefined) {
